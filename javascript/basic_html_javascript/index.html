@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title></title>
+                <script>
+                        let counter = 0;
+                        function helloWorld() {
+                                alert('hello world');
+                        }
+                        function increaseCounter() {
+                                counter +=1;
+                                document.getElementById('counterContainerId').innerHTML = counter;
+                                document.querySelector('h1').innerHTML = counter;
+                        }
+                </script>
+        </head>
+        <body>
+                <h1> hello </h1>
+                <button onclick="helloWorld()">Click here</button>
+                <span id="counterContainerId">0</span>
+                <button onclick="increaseCounter()">Counter</button>
+        </body>
+</html>
