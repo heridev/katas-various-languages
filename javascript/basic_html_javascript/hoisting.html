@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script>
+      document.addEventListener('DOMContentLoaded', usingFunctionDeclaration);
+      // here order is not important because the hoisting is in charged of that
+      function usingFunctionDeclaration() {
+        const element = document.querySelector('#show-message-two');
+        if(element) {
+          element.textContent = 'usingFunctionDeclaration';
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', functionExpression);
+      // // this won't work because this function expression is not hoisted
+      // // you need to move it before the actual access to the function
+      var functionExpression = function something() {
+      // on the other hand, this will work and append the right message to the expected element in the DOM.
+      // function functionExpression() {
+        // const element = document.getElementById('show-message');
+        const element = document.querySelector('#show-message');
+        element.textContent = '"functionExpression"';
+        // never executed because of the hosting
+        console.log("within functionExpression")
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>First method with hoisting using function declaration: <span
+        id="show-message"></span></h1>
+    <h1>Second method without hositing using function expression: <span
+        id="show-message-two"></span></h1>
+  </body>
+</html>
