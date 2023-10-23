@@ -1,3 +1,23 @@
-.main-flex-container {
+.first-flex-container {
+  border: 1px solid green;
   display: flex;
+}
+
+.second-flex-container {
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.first-container__element-3 {
+  flex-shrink: 0;
+  border: dotted green 5px;
+}
+
+.element-5 {
+  background: yellow;
+}
+
+.flex-item {
+  width: 15em;
 }
