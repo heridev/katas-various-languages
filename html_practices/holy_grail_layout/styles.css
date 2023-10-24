@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  background: green;
+  height: 117px;
+  text-align: center;
+}
+
+.main-content {
+  background: yellow;
+  display: flex;
+  height: 20em;
+  justify-content: space-between;
+}
+
+.main-content__items {}
+
+.left-sidebar-content {
+  flex: 1;
+  background: brown;
+}
+
+.main-body-content {
+  flex: 1 1 23em;
+  background: orange;
+}
+
+.right-side-content {
+  flex: 1;
+  background: orangered;
+}
+
+.footer-content {
+  background: gray;
+  height: 117px;
+  text-align: center;
+}

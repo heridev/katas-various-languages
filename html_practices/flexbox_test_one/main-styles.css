@@ -1,6 +1,11 @@
 .first-flex-container {
-  border: 1px solid green;
+  border: 5px solid rgb(51, 49, 178);
   display: flex;
+  height: 20em;
+  gap: 2em;
+  padding: 0 25px;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .second-flex-container {
@@ -9,9 +14,28 @@
   flex-wrap: wrap;
 }
 
+.first-container__element-1 {
+  flex-shrink: 0;
+  background: black;
+  color: white;
+}
+
+.first-container__element-2 {
+  flex-shrink: 0;
+  background: yellow;
+}
+
 .first-container__element-3 {
   flex-shrink: 0;
+  background: green;
   border: dotted green 5px;
+  align-self: flex-start;
+}
+
+.first-container__element-4 {
+  flex-shrink: 0;
+  background: orange;
+  align-self: flex-end;
 }
 
 .element-5 {
@@ -20,4 +44,26 @@
 
 .flex-item {
   width: 15em;
+}
+
+.third-flex-container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  border: green 1px solid;
+}
+
+.third-flex-container__item {
+  margin: 0 24px;
+}
+
+.logo-and-text-container {
+  display: flex;
+  gap: 10px;
+  background: yellow;
+}
+
+.third-container__option-menu {
+  background: purple;
+  color: white;
 }
