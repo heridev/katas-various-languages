@@ -5,10 +5,29 @@
 # For example
 # find_pattern_matching_count('010', 'amazing')
 # Should return 2
+# because vowel constant vowel
+# amazing - ama - matches
+# mazing
+# azing  - azi matches
+# zing
+# ing
+# ng
+# g
 
 # Another example
 # find_pattern_matching_count('100', 'codesignal')
-# Should return 0
+# Should return 0 matches
+# because constant vowel vowel
+# codesignal
+# odesignal
+# designal
+# esignal
+# signal
+# ignal
+# gnal
+# nal
+# al
+# l
 
 VOWELS_AND_Y = %w[a e i o u y].freeze
 CONSONANTS = ('b'..'z').to_a - VOWELS_AND_Y
