@@ -36,6 +36,28 @@ ul li {
   flex-direction: column;
 }
 
+.boxes {
+  display: flex;
+  width: auto;
+  background-color: pink;
+}
+
+.boxes div:first-child {
+  margin-right: auto;
+}
+
+/* or */
+/* .box:first-child {
+  margin-right: auto;
+} */
+
+.box {
+  height: 50px;
+  width: 50px;
+  border: 1px solid green;
+  background-color: red;
+}
+
 footer {
   background: gray;
 }
