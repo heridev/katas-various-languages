@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <h1>Localstorage</h1>
+</head>
+
+<body>
+  <div>
+    <div>
+      <p>another test</p>
+    </div>
+  </div>
+  <p>body content</p>
+</body>
+<script lang="javascript">
+  localStorage.setItem('key', 'value');
+  localStorage.setItem('theme', 'defaultTheme');
+
+  // if you want to store an object, you need to store it as a string
+  // and then do the reverse to access the object
+  const userItem = { name: 'name', age: '37' }
+  localStorage.setItem('user', JSON.stringify(userItem));
+  let userHere = JSON.parse(localStorage.getItem('user'))
+  console.log(userHere, 'userHere')
+
+  // if you want to see the available keys in the localStorage
+  console.log(Object.keys(localStorage), 'keys in the localStorage')
+
+  const keys = Object.keys(localStorage);
+
+  for (key of keys) {
+    console.log('key', key)
+  }
+
+  // if you want to see the available values in the localStorage
+  console.log(Object.values(localStorage), 'keys in the localStorage')
+
+  console.log(localStorage.getItem('user'), 'user values object')
+  console.log(localStorage.getItem('key'), 'value of key before removal')
+  const objectKeys = Object.keys(localStorage.getItem('user'))
+  localStorage.removeItem('key')
+
+  // then clearing out everything
+  localStorage.clear();
+</script>
+
+</html>
