@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Simple DOM title </title>
+</head>
+
+<body>
+  <section>
+    <img src="dinosaur.png" alt="the description" />
+    <p>here is the link <a href="#one">one</a></p>
+    <p>here is the link <a href="#two">two</a></p>
+    <p>here is the link <a href="#three">htree</a></p>
+    <p>here is the link <a href="#four">four</a></p>
+  </section>
+
+  <script>
+    const img = document.querySelector("a");
+    img.textContent = "text content updated"
+    console.log(img, 'img')
+    const collection = document.querySelectorAll('p')
+  </script>
+</body>
+
+</html>

@@ -38,23 +38,6 @@ puts 'Permutations of a string without repeating elements'
 
 # examples:
 
-def brute_force_calculation
-  @values = []
-  %w[a b c].each do |element_one|
-    %w[a b c].each do |element_two|
-      next if element_one == element_two
-
-      %w[a b c].each do |element_three|
-        next if element_two == element_three
-        next if element_one == element_three
-
-        @values << element_one + element_two + element_three
-      end
-    end
-  end
-  @values
-end
-
 @how_many_interactions = 0
 
 # Time complexity would be O(N * N!)
@@ -116,4 +99,20 @@ end
 puts new_values
 puts @how_many_interactions
 
+def brute_force_calculation
+  @values = []
+  %w[a b c].each do |element_one|
+    %w[a b c].each do |element_two|
+      next if element_one == element_two
+
+      %w[a b c].each do |element_three|
+        next if element_two == element_three
+        next if element_one == element_three
+
+        @values << element_one + element_two + element_three
+      end
+    end
+  end
+  @values
+end
 # puts brute_force_calculation

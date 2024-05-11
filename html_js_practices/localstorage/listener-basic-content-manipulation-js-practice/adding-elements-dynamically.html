@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>adding dynamic elements</title>
+  <style>
+    .highlight {
+      color: white;
+      background-color: black;
+      padding: 10px;
+      width: 250px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>first section</h1>
+    <p id="mainp">First line</p>
+    <button onclick="addElement('value 1')">AddElement value 1</button>
+    <button onclick="addElement('value 2')">AddElement value 2</button>
+    <button onclick="addElement('value 3')">AddElement value 3</button>
+
+  </section>
+  <script>
+    function addElement(value) {
+      const mainParagraph = document.querySelector('#mainp');
+      // const mainParagraph = document.getElementById('mainp');
+      const newElement = document.createElement('p');
+      // newElement.classList.add('highlight')
+      newElement.setAttribute('class', 'highlight')
+      newElement.textContent = value;
+      // or 
+      // newElement.innerText = value;
+      mainParagraph.appendChild(newElement);
+      // const newElement = document.createTextNode(value);
+      // mainParagraph.appendChild(newElement);
+    }
+  </script>
+</body>
+
+</html>

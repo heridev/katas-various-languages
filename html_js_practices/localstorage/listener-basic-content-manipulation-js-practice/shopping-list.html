@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> shopping list</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <section>
+      <h2>Adding a new shopping list</h2>
+      <form submit="none">
+        <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+        <input id="adding-element" type="text" />
+        <button onclick="addCurrentElement()" type="button">Add new item</button>
+      </form>
+    </section>
+    <section>
+      <h2>Elements addded</h2>
+      <ul id="shopping-list"></ul>
+    </section>
+  </main>
+  <footer></footer>
+  <script>
+    function hoistingTwo() {
+      var condition = true;
+      let animal = 'black panter'
+      if (condition) {
+        let animal = 'wolf'
+        console.log(`here is the animal ${animal}`)
+      }
+      console.log(`here is the animal ${animal}`)
+    }
+    // this will log the same name(wolf)
+    hoistingTwo()
+
+    function hoistingOne() {
+      console.log(something, 'something')
+      var something = 'hola';
+
+      // Uncaught ReferenceError: Cannot access 'usingLet' before initialization
+      // console.log(usingLet, 'usingLet')
+      // let usingLet = 'yess'
+
+      // same for const
+      try {
+        console.log(usingConst, 'usingLet')
+      } catch (error) {
+        console.log('error exception', error)
+      }
+      let usingConst = 'yess'
+    }
+
+    hoistingOne();
+
+    function deleteCurrentElement(event) {
+      if (event.target.tagName === 'BUTTON') {
+        event.target.parentNode.remove();
+      }
+    }
+
+
+    document.getElementById('shopping-list').addEventListener("click", deleteCurrentElement)
+
+    function addCurrentElement() {
+      const addingElement = document.getElementById('adding-element');
+      const shoppingList = document.getElementById('shopping-list');
+      const newListItem = document.createElement('li')
+      const newButton = document.createElement('button')
+      newListItem.textContent = addingElement.value;
+      newButton.textContent = 'Delete Element'
+      newListItem.appendChild(newButton);
+      shoppingList.appendChild(newListItem);
+      addingElement.value = '';
+
+      // Insecure way of doing this
+      // using innerHTML
+      // const newElement = `
+      //     <li>${addingElement.value}<button class="delete-element-btn">delete element</button></li>
+      //   `;
+
+      // // as you might see here we are appending because of the +=
+      // shoppingList.innerHTML += newElement;
+      // shoppingList.insertAdjacentHTML('beforend', newElement);
+
+      // using appendChild
+    }
+  </script>
+</body>
+
+</html>

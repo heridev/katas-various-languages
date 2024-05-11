@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="mystyles.css" />
+</head>
+
+<body>
+  <h1>hello</h1>
+  <div class="flex-container">
+    <div>this is going to be a really long </div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div class="grid-container">
+    <div>this is going to be a really long </div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <ul id="listContainer">
+  </ul>
+  <form id="form">
+    <input type="text" id="input" />
+    <button type="button" id="button">SEND</button>
+  </form>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttonElement = document.querySelector("#button");
+      buttonElement.addEventListener("click", function () {
+        const inputContent = document.querySelector("input");
+        const ulElement = document.querySelector("ul");
+        const newLiElement = document.createElement("li");
+        const buttonElement = document.createElement("button");
+        buttonElement.classList = "delete-element";
+        buttonElement.textContent = "Delete";
+        buttonElement.addEventListener("click", function () {
+          newLiElement.remove();
+        })
+        newLiElement.textContent = inputContent.value;
+        newLiElement.appendChild(buttonElement);
+        ulElement.appendChild(newLiElement);
+        inputContent.value = "";
+      })
+    })
+  </script>
+</body>
+
+</html>

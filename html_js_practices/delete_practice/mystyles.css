@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: yellow;
+}
+
+#form {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  height: 50px;
+  border: 1px solid gray;
+}
+
+#input {
+  flex-grow: 1;
+  border: none;
+}
+
+#button {
+  border: none;
+}
+
+#button:hover {
+  border: 1px dashed green;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: flex-start; */
+}
+
+.flex-container div {
+  flex-wrap: wrap;
+  flex-grow: 0;
+  border: 2px solid;
+  /* margin: 0 10px; */
+}
+
+.grid-container {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
